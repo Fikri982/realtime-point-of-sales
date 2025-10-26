@@ -12,8 +12,7 @@ export async function createOrder(
   prevState: OrderFormState,
   formData: FormData
 ) {
-  // eslint-disable-next-line prefer-const
-  let validatedFields = orderFormSchema.safeParse({
+  const validatedFields = orderFormSchema.safeParse({
     customer_name: formData.get("customer_name"),
     table_id: formData.get("table_id"),
     status: formData.get("status"),
